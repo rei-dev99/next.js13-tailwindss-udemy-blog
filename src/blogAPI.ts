@@ -57,3 +57,19 @@ export const createArticle = async (
   const newArticles = await res.json();
   return newArticles;
 };
+
+export const deleteArticle = async (id: string): Promise<Article>  => {
+
+  const res = await fetch(`http://localhost:3001/posts/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) {
+    throw new Error("エラーが発生しました");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const deleteArticles = await res.json();
+  return deleteArticles;
+};

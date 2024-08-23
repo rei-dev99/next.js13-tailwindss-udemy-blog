@@ -1,18 +1,6 @@
 {
   "posts": [
     {
-      "id": "next.js13-udemy",
-      "title": "Next.js13をUdemyで学ぶ",
-      "content": "shincodeさんの教材でNext.js13を学んでいます。",
-      "createdAt": "2024/08/22"
-    },
-    {
-      "id": "json-server",
-      "title": "JSONサーバー",
-      "content": "jsonを使うとデータを用意できるらしいし、これからの開発でもどんどん使っていくことができそうなので頑張りたい！",
-      "createdAt": "2024/08/23"
-    },
-    {
       "id": "テストの練習",
       "title": "TESTサーバー",
       "content": "テスト面白すぎでしょううお！",
@@ -47,6 +35,12 @@
       "title": "4444444",
       "content": "4444444444",
       "createdAt": "2024-08-23T04:31:19.679Z"
+    },
+    {
+      "id": "",
+      "title": "",
+      "content": "",
+      "createdAt": "2024-08-23T04:37:51.631Z"
     }
   ]
 }
