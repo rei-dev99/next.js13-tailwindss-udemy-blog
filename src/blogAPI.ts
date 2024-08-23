@@ -8,25 +8,52 @@ export const getAllArticles = async (): Promise<Article[]> => {
     throw new Error("エラーが発生しました");
   }
 
-  await new Promise((resolve) => setTimeout(resolve, 1500))
+  await new Promise((resolve) => setTimeout(resolve, 1500));
 
   const articles = await res.json();
   return articles;
 };
 
 export const getDetailArticles = async (id: string): Promise<Article> => {
-    const res = await fetch(`http://localhost:3001/posts/${id}`, { next: { revalidate: 60 }, }); //ISR
+  const res = await fetch(`http://localhost:3001/posts/${id}`, {
+    next: { revalidate: 60 },
+  }); //ISR
 
-    if(res.status === 404) {
-        notFound();
-    }
+  if (res.status === 404) {
+    notFound();
+  }
 
-    if (!res.ok) {
-      throw new Error("エラーが発生しました");
-    }
+  if (!res.ok) {
+    throw new Error("エラーが発生しました");
+  }
 
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    const articles = await res.json();
-    return articles;
+  const articles = await res.json();
+  return articles;
+};
+
+export const createArticle = async (
+  id: string,
+  title: string,
+  content: string
+): Promise<Article> => {
+  const currentDatetime = new Date().toISOString();
+
+  const res = await fetch(`http://localhost:3001/posts`, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id, title, content, createdAt: currentDatetime }),
+  }); //ISR
+
+  if (!res.ok) {
+    throw new Error("エラーが発生しました");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const newArticles = await res.json();
+  return newArticles;
 };
