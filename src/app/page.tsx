@@ -2,9 +2,26 @@ import Image from "next/image";
 import ArticleList from "./components/ArticleList";
 import { getAllArticles } from "@/blogAPI";
 import { useEffect } from "react";
+import { supabase } from "@/utils/supabaseClient";
 
 export default async function Home() {
-  const articles = await getAllArticles();
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  const res = await fetch(`${API_URL}/api/blog`, { cache: "no-store" });
+
+  if (!res.ok) {
+    console.error("Failed to fetch articles:", res.status, res.statusText);
+    const errorText = await res.text(); // エラーの内容をテキストとして取得
+    console.error("Error response text:", errorText);
+    return (
+      <div>
+        <h1>Error fetching articles</h1>
+        <p>Status: {res.status} - {res.statusText}</p>
+      </div>
+    );
+  }
+
+  const articles = await res.json();
 
   return (
     <div className="md:flex">
@@ -40,4 +57,4 @@ export default async function Home() {
       </aside>
     </div>
   );
-}
+};
