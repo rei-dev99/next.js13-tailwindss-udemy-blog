@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": "テストの練習",
+      "title": "TESTサーバー",
+      "content": "テスト面白すぎでしょううお！",
+      "createdAt": "2024/08/23"
+    },
+    {
+      "id": "Nextjstest",
+      "title": "Nextjstest",
+      "content": "testです",
+      "createdAt": "2024-08-23T04:19:38.665Z"
+    },
+    {
+      "id": "Nextjstest",
+      "title": "Nextjstest",
+      "content": "testです",
+      "createdAt": "2024-08-23T04:19:41.082Z"
+    },
+    {
+      "id": "Nextjstest",
+      "title": "Nextjstest",
+      "content": "testです",
+      "createdAt": "2024-08-23T04:19:51.482Z"
+    },
+    {
+      "id": "test44444",
+      "title": "4444444",
+      "content": "4444444444",
+      "createdAt": "2024-08-23T04:31:17.382Z"
+    },
+    {
+      "id": "test44444",
+      "title": "4444444",
+      "content": "4444444444",
+      "createdAt": "2024-08-23T04:31:19.679Z"
+    },
+    {
+      "id": "",
+      "title": "",
+      "content": "",
+      "createdAt": "2024-08-23T04:37:51.631Z"
+    }
+  ]
+}
